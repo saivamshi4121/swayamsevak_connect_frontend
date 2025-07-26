@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+Swayamsevak Connect – Simple Community Portal
+Swayamsevak Connect is a user-friendly web application designed to make discovering, joining, and managing RSS (Rashtriya Swayamsevak Sangh) shakhas (branches), events, resources, and seva projects effortless for every member—whether you are an admin or a new swayamsevak.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is made very simple so that every user will find it easy to use, understand, and participate.
 
-## Available Scripts
+🌟 Features
+Easy Login & Registration: Secure sign-up for new users and quick login for both users and admins.
 
-In the project directory, you can run:
+Shakha Locator: Instantly find, view, and join RSS shakhas near you—get all the contact details and meeting times.
 
-### `npm start`
+Event Explorer: Browse, RSVP, and engage with local/regional events and projects.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Resource Library: Access baudhik (knowledge) materials—songs, PDFs, speeches, audios, and videos—at your fingertips.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+User & Admin Dashboards:
 
-### `npm test`
+Users: See upcoming events, badges, and your shakha info.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Admins: Manage users, shakhas, events, projects, and content in one place.
 
-### `npm run build`
+Mobile-Friendly: Built for both desktop and mobile ease of use.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clean Design: No confusion—just key options, clear navigation, and direct access to what you need.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+💻 Tech Stack
+Frontend: React (Create React App), Bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend: Node.js, Express.js
 
-### `npm run eject`
+Database: MongoDB (with Mongoose)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Authentication: JWT tokens
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Hosting: Render.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Version Control: GitHub
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🚀 Live Demo
+Access the live app here:
+https://swayamsevak-connect.onrender.com/
