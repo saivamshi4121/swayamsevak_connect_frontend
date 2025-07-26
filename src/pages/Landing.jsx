@@ -11,7 +11,7 @@ const slideshowImages = [
   require('../assets/slideshow4.jpg'),
   require('../assets/slideshow5.jpg'),
   require('../assets/slideshow6.jpg'),
-  
+
 ];
 
 const stories = [
@@ -47,8 +47,10 @@ const Landing = () => {
         const res = await api.get('/events');
         setEvents(res.data);
         setLoadingEvents(false);
-      } catch {
+      } catch (error) {
+        console.log('Events fetch failed:', error.message);
         setLoadingEvents(false);
+        // Don't redirect, just show empty state
       }
     };
     fetchEvents();
