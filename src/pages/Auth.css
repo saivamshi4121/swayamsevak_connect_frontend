@@ -1,0 +1,179 @@
+/* Video background for login/register */
+.auth-bg-video-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 0;
+}
+.auth-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.45;
+  filter: blur(1px) brightness(0.9);
+}
+.auth-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Slideshow for landing page hero */
+.hero-slideshow-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-slideshow-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 0;
+}
+.hero-slideshow-img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.auth-2col-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-2col-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+  overflow: hidden;
+  min-height: 400px;
+}
+.auth-2col-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+@media (max-width: 900px) {
+  .auth-2col-card {
+    max-width: 98vw !important;
+  }
+}
+@media (max-width: 768px) {
+  .auth-2col-card {
+    border-radius: 1rem;
+    min-height: 0;
+  }
+  .auth-2col-container {
+    padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  .auth-2col-card {
+    flex-direction: column;
+    border-radius: 0.5rem;
+    min-height: 0;
+  }
+  .auth-2col-card .col-md-6 {
+    display: none !important;
+  }
+  .auth-2col-card .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+} 
+
+/* Animated gradient background for login */
+.login-animated-bg {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #f8fafc, #e0e7ef, #ffe0b2, #ff6f00, #01579b);
+  background-size: 400% 400%;
+  animation: loginGradientMove 12s ease-in-out infinite;
+}
+@keyframes loginGradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.login-glass-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+/* Animate error shake (uses animate.css if available, fallback to keyframes) */
+@keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+.animate__shakeX {
+  animation: shakeX 0.7s;
+} 
+
+/* 50/50 split for signup/register page */
+.signup-row-fullheight {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.signup-col-img, .signup-col-form {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.signup-col-img {
+  background: #f8fafc;
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+.signup-col-form {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+.signup-col-img img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .signup-col-img, .signup-col-form {
+    max-width: 100%;
+    min-height: 50vh;
+    height: 50vh;
+  }
+  .signup-row-fullheight {
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+  }
+  .signup-col-img img {
+    height: 50vh;
+  }
+} 
