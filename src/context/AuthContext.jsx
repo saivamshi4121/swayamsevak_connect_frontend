@@ -29,10 +29,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (name, email, password) => {
+  const register = async (name, email, password, additionalData = {}) => {
     setLoading(true);
     try {
-      await api.post('/auth/register', { name, email, password });
+      const { number, age, designation, shakha } = additionalData;
+      await api.post('/auth/register', { 
+        name, 
+        email, 
+        password, 
+        number, 
+        age, 
+        designation, 
+        shakha 
+      });
       setLoading(false);
       return { success: true };
     } catch (err) {

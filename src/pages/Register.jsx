@@ -30,11 +30,54 @@ const Register = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
-    if (!name || !email || !number || !age || !designation || !shakha || !password) {
-      setError('Please fill in all fields.');
+    
+    // Debug: Log all form values
+    console.log('Form values:', {
+      name: name.trim(),
+      email: email.trim(),
+      number: number.trim(),
+      age: age.toString().trim(),
+      designation: designation.trim(),
+      shakha: shakha.trim(),
+      password: password.trim()
+    });
+    
+    // Check each field individually for better error messages
+    if (!name.trim()) {
+      setError('Name is required.');
       return;
     }
-    const res = await register(name, email, password, { number, age, designation, shakha });
+    if (!email.trim()) {
+      setError('Email is required.');
+      return;
+    }
+    if (!number.trim()) {
+      setError('Mobile number is required.');
+      return;
+    }
+    if (!age.toString().trim()) {
+      setError('Age is required.');
+      return;
+    }
+    if (!designation.trim()) {
+      setError('Please select a designation.');
+      return;
+    }
+    if (!shakha.trim()) {
+      setError('Shakha name is required.');
+      return;
+    }
+    if (!password.trim()) {
+      setError('Password is required.');
+      return;
+    }
+    
+    const res = await register(name.trim(), email.trim(), password, {
+      number: number.trim(),
+      age: age.toString().trim(),
+      designation: designation.trim(),
+      shakha: shakha.trim(),
+    });
     if (res.success) {
       setSuccess('Registration successful! Please login.');
       setTimeout(() => navigate('/login'), 1500);
