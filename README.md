@@ -14,7 +14,7 @@ https://swayamsevak-connect.onrender.com/
 
 **Event Explorer: Browse, RSVP, and engage with events/projects**
 
-Resource Library: Access geets, PDFs, speeches, audios & videos
+**Resource Library: Access geets, PDFs, speeches, audios & videos**
 
 Customized Dashboards:
 
@@ -25,14 +25,14 @@ Admins: Manage users, shakhas, events, resources
 Clean, Mobile-Responsive UI***
 
 🛠 Tech Stack
-Frontend: React (Create React App), Bootstrap
+**Frontend: React (Create React App), Bootstrap**
 
-Backend: Node.js, Express.js
+**Backend: Node.js, Express.js**
 
-Database: MongoDB (Mongoose)
+**Database: MongoDB (Mongoose)**
 
-Authentication: JWT
+**Authentication: JWT**
 
-Deployment: Render
+**Deployment: Render**
 
-Version Control: GitHub
+**Version Control: GitHub**
