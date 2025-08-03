@@ -7,6 +7,7 @@ const initialForm = {
   date: '',
   type: '',
   region: '',
+  isOpenToAll: true,
   participants: [],
   createdBy: '',
 };
@@ -48,6 +49,7 @@ const EventManager = () => {
         participants: event.participants?.map(p => p._id) || [],
         createdBy: event.createdBy?._id || '',
         date: event.date ? event.date.slice(0, 16) : '',
+        isOpenToAll: event.isOpenToAll !== undefined ? event.isOpenToAll : true,
       });
       setEditingId(event._id);
     } else {
@@ -59,9 +61,11 @@ const EventManager = () => {
   };
 
   const handleChange = e => {
-    const { name, value, type, selectedOptions } = e.target;
+    const { name, value, type, checked, selectedOptions } = e.target;
     if (name === 'participants') {
       setForm(f => ({ ...f, participants: Array.from(selectedOptions, o => o.value) }));
+    } else if (type === 'checkbox') {
+      setForm(f => ({ ...f, [name]: checked }));
     } else {
       setForm(f => ({ ...f, [name]: value }));
     }
@@ -117,6 +121,7 @@ const EventManager = () => {
               <th>Type</th>
               <th>Region</th>
               <th>Participants</th>
+              <th>Registration</th>
               <th>Created By</th>
               <th>Actions</th>
             </tr>
@@ -128,7 +133,12 @@ const EventManager = () => {
                 <td>{event.date ? new Date(event.date).toLocaleString() : ''}</td>
                 <td>{event.type}</td>
                 <td>{event.region}</td>
-                <td>{event.participants?.map(p => p.name).join(', ')}</td>
+                <td>{event.participants?.length || 0} registered</td>
+                <td>
+                  <span className={`badge ${event.isOpenToAll ? 'bg-success' : 'bg-warning'}`}>
+                    {event.isOpenToAll ? 'Open to All' : 'Invite Only'}
+                  </span>
+                </td>
                 <td>{event.createdBy?.name || '-'}</td>
                 <td>
                   <button className="btn btn-sm btn-secondary me-2" onClick={() => openModal(event)}>Edit</button>
@@ -172,13 +182,32 @@ const EventManager = () => {
                     <input className="form-control" name="region" value={form.region} onChange={handleChange} />
                   </div>
                   <div className="mb-2">
-                    <label>Participants</label>
-                    <select className="form-select" name="participants" value={form.participants} onChange={handleChange} multiple>
-                      {users.map(u => (
-                        <option key={u._id} value={u._id}>{u.name} ({u.email})</option>
-                      ))}
-                    </select>
+                    <div className="form-check">
+                      <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        name="isOpenToAll" 
+                        checked={form.isOpenToAll} 
+                        onChange={handleChange} 
+                        id="openToAll" 
+                      />
+                      <label className="form-check-label" htmlFor="openToAll">
+                        Open for everyone to join
+                      </label>
+                    </div>
+                    <small className="text-muted">When checked, users can join this event themselves. When unchecked, you can manually select participants.</small>
                   </div>
+                  {!form.isOpenToAll && (
+                    <div className="mb-2">
+                      <label>Participants (Manual Selection)</label>
+                      <select className="form-select" name="participants" value={form.participants} onChange={handleChange} multiple>
+                        {users.map(u => (
+                          <option key={u._id} value={u._id}>{u.name} ({u.email})</option>
+                        ))}
+                      </select>
+                      <small className="text-muted">Hold Ctrl/Cmd to select multiple participants</small>
+                    </div>
+                  )}
                   <div className="mb-2">
                     <label>Created By</label>
                     <select className="form-select" name="createdBy" value={form.createdBy} onChange={handleChange} required>
