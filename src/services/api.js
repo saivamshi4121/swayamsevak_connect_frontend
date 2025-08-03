@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // Force local development
+  baseURL: process.env.REACT_APP_API_URL || 'https://swayamsevakapi.onrender.com',
 });
 
 // Add Authorization header if token exists
