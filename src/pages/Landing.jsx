@@ -44,7 +44,7 @@ const Landing = () => {
     const fetchEvents = async () => {
       setLoadingEvents(true);
       try {
-        const res = await api.get('/events');
+        const res = await api.get('/events/public');
         setEvents(res.data);
         setLoadingEvents(false);
       } catch (error) {

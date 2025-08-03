@@ -48,7 +48,7 @@ const ShakhaLocator = () => {
     const fetchShakhas = async () => {
       setLoading(true);
       try {
-        const res = await api.get('/shakhas');
+        const res = await api.get('/shakhas/public');
         setShakhas(res.data);
         setLoading(false);
       } catch (err) {
