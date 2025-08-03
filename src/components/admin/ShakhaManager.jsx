@@ -3,12 +3,11 @@ import api from '../../services/api';
 
 const initialForm = {
   name: '',
-  phone: '',
-  locationLink: '',
+  lat: '',
+  lng: '',
   region: '',
-  shakhaHead: '',
+  category: '',
   schedule: '',
-  organizer: '',
   visibility: true,
 };
 
@@ -47,12 +46,13 @@ const ShakhaManager = () => {
   const openModal = (shakha = null) => {
     if (shakha) {
       setForm({
-        ...shakha,
-        location: {
-          lat: shakha.location?.lat || '',
-          lng: shakha.location?.lng || '',
-        },
-        organizer: shakha.organizer?._id || '',
+        name: shakha.name || '',
+        lat: shakha.location?.lat || '',
+        lng: shakha.location?.lng || '',
+        region: shakha.region || '',
+        category: shakha.category || '',
+        schedule: shakha.schedule || '',
+        visibility: shakha.visibility !== undefined ? shakha.visibility : true,
       });
       setEditingId(shakha._id);
     } else {
@@ -63,11 +63,29 @@ const ShakhaManager = () => {
     setShowModal(true);
   };
 
+  // Extract coordinates from Google Maps link
+  const extractCoordinates = (url) => {
+    const regex = /@(-?\d+\.?\d*),(-?\d+\.?\d*)/;
+    const match = url.match(regex);
+    if (match) {
+      return { lat: match[1], lng: match[2] };
+    }
+    return null;
+  };
+
   // Handle form change
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
       setForm(f => ({ ...f, [name]: checked }));
+    } else if (name === 'mapsLink' && value) {
+      // Extract coordinates from Google Maps link
+      const coords = extractCoordinates(value);
+      if (coords) {
+        setForm(f => ({ ...f, lat: coords.lat, lng: coords.lng, [name]: value }));
+      } else {
+        setForm(f => ({ ...f, [name]: value }));
+      }
     } else {
       setForm(f => ({ ...f, [name]: value }));
     }
@@ -79,7 +97,17 @@ const ShakhaManager = () => {
     setActionLoading(true);
     setModalError('');
     try {
-      const payload = { ...form };
+      const payload = {
+        name: form.name,
+        location: {
+          lat: parseFloat(form.lat) || 0,
+          lng: parseFloat(form.lng) || 0
+        },
+        region: form.region,
+        category: form.category,
+        schedule: form.schedule,
+        visibility: form.visibility
+      };
       if (editingId) {
         await api.put(`/shakhas/${editingId}`, payload);
       } else {
@@ -164,33 +192,36 @@ const ShakhaManager = () => {
                     <input className="form-control" name="name" value={form.name} onChange={handleChange} required />
                   </div>
                   <div className="mb-2">
-                    <label>Phone Number</label>
-                    <input className="form-control" name="phone" value={form.phone} onChange={handleChange} required type="tel" />
+                    <label>Google Maps Link (Optional)</label>
+                    <input className="form-control" name="mapsLink" onChange={handleChange} type="url" placeholder="Paste Google Maps link here - coordinates will be extracted automatically" />
+                    <small className="text-muted">Or enter coordinates manually below</small>
                   </div>
-                  <div className="mb-2">
-                    <label>Location Link</label>
-                    <input className="form-control" name="locationLink" value={form.locationLink} onChange={handleChange} required type="url" placeholder="Paste Google Maps link here" />
+                  <div className="row">
+                    <div className="col-md-6 mb-2">
+                      <label>Latitude</label>
+                      <input className="form-control" name="lat" value={form.lat} onChange={handleChange} required type="number" step="any" placeholder="17.3850" />
+                    </div>
+                    <div className="col-md-6 mb-2">
+                      <label>Longitude</label>
+                      <input className="form-control" name="lng" value={form.lng} onChange={handleChange} required type="number" step="any" placeholder="78.4867" />
+                    </div>
                   </div>
                   <div className="mb-2">
                     <label>Region</label>
                     <input className="form-control" name="region" value={form.region} onChange={handleChange} required />
                   </div>
                   <div className="mb-2">
-                    <label>Shakha Head</label>
-                    <input className="form-control" name="shakhaHead" value={form.shakhaHead} onChange={handleChange} required />
+                    <label>Category</label>
+                    <select className="form-select" name="category" value={form.category} onChange={handleChange} required>
+                      <option value="">Select Category</option>
+                      <option value="Urban">Urban</option>
+                      <option value="Rural">Rural</option>
+                      <option value="Suburban">Suburban</option>
+                    </select>
                   </div>
                   <div className="mb-2">
                     <label>Schedule</label>
-                    <input className="form-control" name="schedule" value={form.schedule} onChange={handleChange} />
-                  </div>
-                  <div className="mb-2">
-                    <label>Organizer</label>
-                    <select className="form-select" name="organizer" value={form.organizer} onChange={handleChange} required>
-                      <option value="">Select Organizer</option>
-                      {users.map(u => (
-                        <option key={u._id} value={u._id}>{u.name} ({u.email})</option>
-                      ))}
-                    </select>
+                    <input className="form-control" name="schedule" value={form.schedule} onChange={handleChange} placeholder="Daily 6:00 AM - 7:00 AM" />
                   </div>
                   <div className="form-check mb-2">
                     <input className="form-check-input" type="checkbox" name="visibility" checked={form.visibility} onChange={handleChange} id="shakhaVisible" />
