@@ -245,6 +245,123 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* Footer Section */}
+      <footer className="footer-modern">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-section">
+              <h3 className="footer-title">Swayamsevak Connect</h3>
+              <p className="footer-description">
+                Uniting volunteers across Bharat to serve society and build a stronger nation through dedicated seva and community engagement.
+              </p>
+              <div className="social-links">
+                <a href="#" className="social-link">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" className="social-link">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a href="#" className="social-link">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="#" className="social-link">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div className="footer-section">
+              <h4 className="footer-heading">Quick Links</h4>
+              <ul className="footer-links">
+                <li><a href="#" onClick={() => navigate('/shakha-locator')}>Find Shakha</a></li>
+                <li><a href="#" onClick={() => navigate('/events')}>Events</a></li>
+                <li><a href="#" onClick={() => navigate('/register')}>Join Us</a></li>
+                <li><a href="#" onClick={() => navigate('/login')}>Sign In</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-section">
+              <h4 className="footer-heading">Contact Admin</h4>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <i className="fas fa-envelope"></i>
+                  <div>
+                    <span className="contact-label">Email</span>
+                    <a href="mailto:admin@swayamsevakconnect.com" className="contact-value">
+                      admin@swayamsevakconnect.com
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-phone"></i>
+                  <div>
+                    <span className="contact-label">Phone</span>
+                    <a href="tel:+919876543210" className="contact-value">
+                      +91 98765 43210
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <div>
+                    <span className="contact-label">Address</span>
+                    <span className="contact-value">
+                      RSS Headquarters, Nagpur, Maharashtra, India
+                    </span>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-clock"></i>
+                  <div>
+                    <span className="contact-label">Office Hours</span>
+                    <span className="contact-value">
+                      Mon - Fri: 9:00 AM - 6:00 PM
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="footer-section">
+              <h4 className="footer-heading">Emergency Contact</h4>
+              <div className="emergency-contact">
+                <div className="emergency-item">
+                  <i className="fas fa-exclamation-triangle"></i>
+                  <div>
+                    <span className="emergency-label">24/7 Helpline</span>
+                    <a href="tel:+919876543211" className="emergency-value">
+                      +91 98765 43211
+                    </a>
+                  </div>
+                </div>
+                <div className="emergency-item">
+                  <i className="fas fa-shield-alt"></i>
+                  <div>
+                    <span className="emergency-label">Security</span>
+                    <a href="tel:+919876543212" className="emergency-value">
+                      +91 98765 43212
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            <div className="footer-bottom-content">
+              <p className="copyright">
+                © 2024 Swayamsevak Connect. All rights reserved.
+              </p>
+              <div className="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       {/* Login/Signup Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
