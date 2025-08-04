@@ -5,7 +5,7 @@ A simple, user-friendly web portal for discovering, joining, and managing RSS (R
 
 🚀 **Live Demo**
 🌐 View the App on Render
-https://swayamsevak-connect.onrender.com/
+[https://swayamsevak-connect.onrender.com/](https://swayamsevak.stackhaus.dev/)
 
 ✨ Features
 ***Easy Login & Registration for users and admins**
