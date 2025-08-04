@@ -1,45 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/login</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/login</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/register</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/register</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/shakha-locator</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/shakha-locator</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/events</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/events</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/admin</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/admin</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://swayamsevak-connect.onrender.com/user</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://swayamsevak.stackhaus.dev/user</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/profile</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/events</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/seva-projects</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/resources</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/badges</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://swayamsevak.stackhaus.dev/user/help</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset> 

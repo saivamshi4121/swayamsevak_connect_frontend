@@ -84,13 +84,13 @@ const Landing = () => {
     "@type": "WebPage",
     "name": "Swayamsevak Connect - Home",
     "description": "Join thousands of volunteers working together for a stronger Bharat. Find your local shakha, participate in community events, and make a difference through dedicated seva.",
-    "url": "https://swayamsevak-connect.onrender.com",
+    "url": "https://swayamsevak.stackhaus.dev",
     "mainEntity": {
       "@type": "Organization",
       "name": "Swayamsevak Connect",
       "description": "Uniting volunteers across Bharat to serve society and build a stronger nation through dedicated seva and community engagement.",
-      "url": "https://swayamsevak-connect.onrender.com",
-      "logo": "https://swayamsevak-connect.onrender.com/logo192.png",
+      "url": "https://swayamsevak.stackhaus.dev",
+      "logo": "https://swayamsevak.stackhaus.dev/logo192.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-9490940282",
@@ -111,7 +111,7 @@ const Landing = () => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://swayamsevak-connect.onrender.com"
+          "item": "https://swayamsevak.stackhaus.dev"
         }
       ]
     }
@@ -123,7 +123,7 @@ const Landing = () => {
         title="Uniting Volunteers Across Bharat"
         description="Join thousands of volunteers working together for a stronger Bharat. Find your local shakha, participate in community events, and make a difference through dedicated seva."
         keywords="Swayamsevak, RSS, volunteer, community service, Bharat, shakha, seva, social work, youth development, cultural events, community engagement"
-        url="https://swayamsevak-connect.onrender.com"
+        url="https://swayamsevak.stackhaus.dev"
         structuredData={landingStructuredData}
       />
       

@@ -15,8 +15,8 @@ export const generateMetaTags = (pageData) => {
     title: title || 'Swayamsevak Connect',
     description: description || 'Join thousands of volunteers working together for a stronger Bharat.',
     keywords: keywords || 'Swayamsevak, RSS, volunteer, community service, Bharat, shakha, seva',
-    image: image || 'https://swayamsevak-connect.onrender.com/og-image.jpg',
-    url: url || 'https://swayamsevak-connect.onrender.com',
+    image: image || 'https://swayamsevak.stackhaus.dev/og-image.jpg',
+    url: url || 'https://swayamsevak.stackhaus.dev',
     type,
     structuredData
   };
@@ -28,7 +28,7 @@ export const generateStructuredData = (type, data) => {
   const baseData = {
     "@context": "https://schema.org",
     "@type": type,
-    "url": "https://swayamsevak-connect.onrender.com"
+    "url": "https://swayamsevak.stackhaus.dev"
   };
 
   switch (type) {
@@ -37,7 +37,7 @@ export const generateStructuredData = (type, data) => {
         ...baseData,
         "name": "Swayamsevak Connect",
         "description": "Uniting volunteers across Bharat to serve society and build a stronger nation through dedicated seva and community engagement.",
-        "logo": "https://swayamsevak-connect.onrender.com/logo192.png",
+        "logo": "https://swayamsevak.stackhaus.dev/logo192.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-9490940282",
@@ -101,7 +101,7 @@ export const preloadCriticalResources = () => {
 };
 
 export const generateSitemap = (routes) => {
-  const baseUrl = 'https://swayamsevak-connect.onrender.com';
+  const baseUrl = 'https://swayamsevak.stackhaus.dev';
   const currentDate = new Date().toISOString().split('T')[0];
 
   const sitemapEntries = routes.map(route => ({
@@ -126,13 +126,13 @@ export const generateBreadcrumbs = (path) => {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://swayamsevak-connect.onrender.com"
+      "item": "https://swayamsevak.stackhaus.dev"
     }
   ];
 
   segments.forEach((segment, index) => {
     const name = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
-    const item = `https://swayamsevak-connect.onrender.com/${segments.slice(0, index + 1).join('/')}`;
+    const item = `https://swayamsevak.stackhaus.dev/${segments.slice(0, index + 1).join('/')}`;
     
     breadcrumbs.push({
       "@type": "ListItem",

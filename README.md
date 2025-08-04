@@ -5,8 +5,12 @@ A simple, user-friendly web portal for discovering, joining, and managing RSS (R
 
 🚀 **Live Demo**
 🌐 View the App on Render
+<<<<<<< HEAD
 [https://swayamsevak-connect.onrender.com/](https://swayamsevak.stackhaus.dev/)
 **Backend Url** : https://github.com/saivamshi4121/swayamsevak_connect.git
+=======
+https://swayamsevak.stackhaus.dev/
+>>>>>>> 934e220 ( SEO Optimization: Updated domain to swayamsevak.stackhaus.dev, added Google Analytics tracking, enhanced meta tags and sitemap)
 
 ✨ Features
 ***Easy Login & Registration for users and admins**

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Swayamsevak Connect",
+  "name": "Swayamsevak Connect - Uniting Volunteers Across Bharat",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,9 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#FF6F00",
+  "background_color": "#ffffff",
+  "description": "Join thousands of volunteers working together for a stronger Bharat. Find your local shakha, participate in community events, and make a difference through dedicated seva.",
+  "categories": ["social", "community", "volunteer"],
+  "lang": "en"
 }

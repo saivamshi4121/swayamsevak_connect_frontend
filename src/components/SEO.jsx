@@ -13,8 +13,8 @@ const SEO = ({
   const siteTitle = 'Swayamsevak Connect';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDescription = 'Join thousands of volunteers working together for a stronger Bharat. Find your local shakha, participate in community events, and make a difference through dedicated seva.';
-  const defaultImage = 'https://swayamsevak-connect.onrender.com/og-image.jpg';
-  const defaultUrl = 'https://swayamsevak-connect.onrender.com';
+  const defaultImage = 'https://swayamsevak.stackhaus.dev/og-image.jpg';
+  const defaultUrl = 'https://swayamsevak.stackhaus.dev';
 
   return (
     <Helmet>

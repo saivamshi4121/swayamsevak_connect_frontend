@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://swayamsevak-connect.onrender.com/sitemap.xml
+Sitemap: https://swayamsevak.stackhaus.dev/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
